@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,9 +112,9 @@
       <p>⏳ Hurry! Offer expires in:</p>
       <div class="countdown" id="countdown">05:00</div>
     </div>
-    <img src="https://i.imgur.com/IfQYJrB.png" alt="Flipkart Gift Card" class="gift-img" />
+    <img src="https://i.postimg.cc/3Nm1MJsp/flipkart-giftcard.jpg" alt="Flipkart Gift Card" class="gift-img" />
     <p>Only a few spots left! Grab your chance now. 😍</p>
-    <button class="btn" onclick="window.location.href='https://singingfiles.com/show.php?l=0&u=388775&id=700'">🎁 Claim Now</button>
+    <button class="btn" onclick="window.location.href='https://optilinklock.com/1827152'">🎁 Claim Now</button>
 
     <!-- WhatsApp Share Button -->
     <div class="referral-info" id="referral-box"></div>
@@ -151,7 +150,7 @@
     function updateCountdown() {
       const minutes = Math.floor(countdownTime / 60);
       const seconds = countdownTime % 60;
-      countdownElement.textContent = \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;
+      countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
       if (countdownTime > 0) countdownTime--;
     }
 
@@ -163,8 +162,8 @@
     const ref = params.get("ref");
 
     if (ref) {
-      document.getElementById("referral-box").innerHTML = \`🔗 Referred by: <strong>\${ref}</strong><br>📤 Your Referral Link: <br><code>https://getinstantoffer.tk?ref=\${ref}</code>\`;
-      document.getElementById("whatsapp-share-btn").href = \`https://api.whatsapp.com/send?text=🎁%20Claim%20your%20₹500%20Flipkart%20Gift%20Card%20now!%20Only%20for%20a%20limited%20time!%20https://getinstantoffer.tk?ref=\${ref}\`;
+      document.getElementById("referral-box").innerHTML = `🔗 Referred by: <strong>${ref}</strong><br>📤 Your Referral Link: <br><code>https://getinstantoffer.tk?ref=${ref}</code>`;
+      document.getElementById("whatsapp-share-btn").href = `https://api.whatsapp.com/send?text=🎁%20Claim%20your%20₹500%20Flipkart%20Gift%20Card%20now!%20Only%20for%20a%20limited%20time!%20https://getinstantoffer.tk?ref=${ref}`;
     } else {
       document.getElementById("referral-box").innerText = "Refer your friends and earn more chances to win!";
       document.getElementById("whatsapp-share-btn").style.display = "none";
