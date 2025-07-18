@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎁 Claim Your ₹500 Flipkart Gift Card!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .logo {
+      max-width: 150px;
+      margin: 20px auto;
+    }
+    h1 {
+      color: #0d47a1;
+      font-size: 28px;
+    }
+    .gift-img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .btn, .whatsapp-share {
+      display: inline-block;
+      background: #ff5722;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px 5px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #e64a19;
+    }
+    .whatsapp-share {
+      background-color: #25D366;
+    }
+    .whatsapp-share:hover {
+      background-color: #1ebc59;
+    }
+    .note {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .raffle-box {
+      background-color: #fffbe7;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .raffle-box h2 {
+      font-size: 20px;
+      color: #d32f2f;
+    }
+
+    .countdown {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff5722;
+      margin-top: 10px;
+    }
+
+    .referral-info {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .social-proof {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      color: #333;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      font-size: 14px;
+      z-index: 1000;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flipkart_logo.png" alt="Flipkart Logo" class="logo" />
+    <h1>🎉 Get ₹500 Flipkart Gift Card – Today Only! 🤑</h1>
+    <div class="raffle-box">
+      <h2>🎟️ You’ve been randomly selected to win a ₹500 Flipkart Gift Card!</h2>
+      <p>⏳ Hurry! Offer expires in:</p>
+      <div class="countdown" id="countdown">05:00</div>
+    </div>
+    <img src="https://i.imgur.com/IfQYJrB.png" alt="Flipkart Gift Card" class="gift-img" />
+    <p>Only a few spots left! Grab your chance now. 😍</p>
+    <button class="btn" onclick="window.location.href='https://singingfiles.com/show.php?l=0&u=388775&id=700'">🎁 Claim Now</button>
+
+    <!-- WhatsApp Share Button -->
+    <div class="referral-info" id="referral-box"></div>
+    <a class="whatsapp-share" id="whatsapp-share-btn" href="#" target="_blank">📤 Share Your Link</a>
+
+    <p class="note">⚠️ Offer valid for a few minutes. Don’t miss out!</p>
+  </div>
+
+  <div class="social-proof" id="social-proof"></div>
+
+  <script>
+    const cities = ["Delhi", "Mumbai", "Hyderabad", "Chennai", "Lucknow", "Pune", "Kolkata", "Bhopal", "Patna", "Jaipur"];
+    const messages = [
+      "just claimed ₹500 Flipkart Gift Card 🎉",
+      "grabbed the reward successfully 🤑",
+      "completed the offer and got a gift 🎁",
+      "signed up and received their reward 🎉"
+    ];
+
+    function showSocialProof() {
+      const city = cities[Math.floor(Math.random() * cities.length)];
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('social-proof').innerText = `📍 Someone from ${city} ${msg}`;
+    }
+
+    showSocialProof();
+    setInterval(showSocialProof, 7000);
+
+    // Countdown timer
+    let countdownTime = 300;
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const minutes = Math.floor(countdownTime / 60);
+      const seconds = countdownTime % 60;
+      countdownElement.textContent = \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;
+      if (countdownTime > 0) countdownTime--;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Referral system
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
+
+    if (ref) {
+      document.getElementById("referral-box").innerHTML = \`🔗 Referred by: <strong>\${ref}</strong><br>📤 Your Referral Link: <br><code>https://getinstantoffer.tk?ref=\${ref}</code>\`;
+      document.getElementById("whatsapp-share-btn").href = \`https://api.whatsapp.com/send?text=🎁%20Claim%20your%20₹500%20Flipkart%20Gift%20Card%20now!%20Only%20for%20a%20limited%20time!%20https://getinstantoffer.tk?ref=\${ref}\`;
+    } else {
+      document.getElementById("referral-box").innerText = "Refer your friends and earn more chances to win!";
+      document.getElementById("whatsapp-share-btn").style.display = "none";
+    }
+  </script>
+</body>
+</html>
